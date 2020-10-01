@@ -1,5 +1,4 @@
 var currentDayEl = document.getElementById('currentDay');
-// var toDoEl= document.getElementByClassName('border');
 var toDo = [];
 var hours = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
 
@@ -49,8 +48,6 @@ var nowTime = function() {
 
 // when page loads
 nowTime();
-// futureTime();
-// pastTime();
 //when time passes, box shades out
 //when time is current, box color
 //when time is future, box color
