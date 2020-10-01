@@ -9,10 +9,9 @@ currentDayEl.textContent = displayDay;
 //save entered comment
 $("#save-input").on("click", function() {
     event.preventDefault();
-    var taskInput = $("#toDo")
-        .val()
-        .trim();
-localStorage.setItem("toDo", taskInput);
+    var taskInput = $(".text")
+        .val();
+localStorage.setItem("input", taskInput);
 });
 //set current time to compare to scheduled time
 var compareTime = moment().hours();  // give us the current hour in military format 

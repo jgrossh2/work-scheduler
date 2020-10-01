@@ -74,8 +74,15 @@ textarea{
   background-color: lightgray;
 }
 .current {
-  background-color: green;
+  background-color: lightgreen;
 }
 .future {
-  background-color: blue;
+  background-color: lightblue;
+}
+.hour {
+  font: 24px bold;
+  text-align: center;
+}
+.btn {
+  width: 100%;
 }
