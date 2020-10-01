@@ -25,7 +25,7 @@ var nowTime = function() {
 
 // for each time, determine past, present, future
 // get the currentTime   and compare with 
-    $(".border").each(function() {
+    $(".content").each(function() {
         console.log(this)
                 //  get the hour from the data-hour inside the row
      var setTime = parseInt($(this).attr("data-hour"));
