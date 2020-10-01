@@ -11,14 +11,16 @@ $("#save-input").on("click", function() {
     event.preventDefault();
     var taskInput = $(".text")
         .val();
-localStorage.setItem("input", taskInput);
+var saveInput = function() {
+        localStorage.setItem("input", taskInput);
+    };
 });
+
+// var list = JSON.parse(localStorage.getItem("input")) || [];
+
 //set current time to compare to scheduled time
 var compareTime = moment().hours();  // give us the current hour in military format 
-///var compareTime = parseInt(currentTime);
 console.log(compareTime);
-// var setTime=[];
-// var setTime = $("#time").attr("data-hour");
 
 var nowTime = function() {
 
@@ -44,11 +46,8 @@ var nowTime = function() {
     });
 }
 
-
 // when page loads
 nowTime();
-//when time passes, box shades out
-//when time is current, box color
-//when time is future, box color
+
 
 
