@@ -1,5 +1,5 @@
 var currentDayEl = document.getElementById('currentDay');
-var toDoEl= document.getElementById('toDo');
+// var toDoEl= document.getElementByClassName('border');
 var toDo = [];
 var hours = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
 
@@ -16,26 +16,33 @@ $("#save-input").on("click", function() {
 localStorage.setItem("toDo", taskInput);
 });
 //set current time to compare to scheduled time
-var currentTime = moment().format('LT');
-var compareTime = parseInt(currentTime);
+var compareTime = moment().hours();  // give us the current hour in military format 
+///var compareTime = parseInt(currentTime);
 console.log(compareTime);
-var setTime=[];
-var setTime = $("#time").attr("data-hour");
+// var setTime=[];
+// var setTime = $("#time").attr("data-hour");
 
 var nowTime = function() {
-// for each time, determine past, present, future
-    $(toDoEl).each(function() {
-         setTime === compareTime 
-        $(toDoEl).addClass("current"); 
-        console.log("yes")
-        
-        setTime<compareTime
-        $(toDoEl).addClass("past");    
-        console.log("no")
 
-        setTime>compareTime 
-        $(toDoEl).addClass("future");
+// for each time, determine past, present, future
+// get the currentTime   and compare with 
+    $(".border").each(function() {
+        console.log(this)
+                //  get the hour from the data-hour inside the row
+     var setTime = parseInt($(this).attr("data-hour"));
+     console.log("block time:", setTime)
+
+        if( setTime === compareTime){
+        $(this).addClass("current"); 
+        console.log("yes")
+        }else if(
+        setTime<compareTime){
+        $(this).addClass("past");    
+        console.log("no")
+        }else { 
+        $(this).addClass("future");
         console.log("ok")
+        }
     });
 }
 
