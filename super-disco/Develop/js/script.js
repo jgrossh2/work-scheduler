@@ -127,24 +127,24 @@ function displayInput() {
         // console.log("yipee")
         var toDoText = $("<span>")
             .addClass("task")
-            .text(input);
+            .text();
             console.log("soclose")
-        toDoText.text(input[i]);
+        // toDoText.text(input[i]);
         console.log("working")
 
     //adds input to the text
     $(".content").append(toDoText);
     
         // replace textarea with p element
-        $(".block-0").replaceWith();
-        $(".block-1").replaceWith();
-        $(".block-2").replaceWith();
-        $(".block-3").replaceWith();
-        $(".block-4").replaceWith();
-        $(".block-5").replaceWith();
-        $(".block-6").replaceWith();
-        $(".block-7").replaceWith();
-        $(".block-8").replaceWith();
+        $(".block-0").replaceWith(input[0]);
+        $(".block-1").replaceWith(input[1]);
+        $(".block-2").replaceWith(input[2]);
+        $(".block-3").replaceWith(input[3]);
+        $(".block-4").replaceWith(input[4]);
+        $(".block-5").replaceWith(input[5]);
+        $(".block-6").replaceWith(input[6]);
+        $(".block-7").replaceWith(input[7]);
+        $(".block-8").replaceWith(input[8]);
         console.log("madeit")
     }
 };
@@ -158,7 +158,7 @@ var nowTime = function() {
 // get the currentTime   and compare with 
     $(".content").each(function() {
         console.log(this)
-                //  get the hour from the data-hour inside the row
+//  get the hour from the data-hour inside the row
      var setTime = parseInt($(this).attr("data-hour"));
      console.log("block time:", setTime)
 
