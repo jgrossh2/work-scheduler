@@ -5,7 +5,7 @@ var currentDayEl = document.getElementById('currentDay');
 // var input = [];
 // var hours = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
 
-var displayDay= moment().format("MMMM Do YYYY");
+var displayDay= moment().format("dddd MMMM do YYYY");
 console.log(displayDay);
 currentDayEl.textContent = displayDay;
 
@@ -66,6 +66,8 @@ $(".hour9").on("click", function(event) {
         .trim();
     localStorage.setItem("input", hour9);
 });
+//going forward, new id's and inputs
+//need to arrange in array to save and get?
 // todos on the page
 function displayInput(input) {
     var input = localStorage.getItem("input") || [];
