@@ -1,23 +1,47 @@
+$(document).ready(function() {
+
 var currentDayEl = document.getElementById('currentDay');
-var toDo = [];
-var hours = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
+// var toDo = [];
+// var input = [];
+// var hours = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
 
 var displayDay= moment().format("MMMM Do YYYY");
 console.log(displayDay);
 currentDayEl.textContent = displayDay;
 
 //save entered comment
-$("#save-input").on("click", function() {
+$(".save-input").on("click", function(event) {
     event.preventDefault();
     var taskInput = $(".text")
-        .val();
-var saveInput = function() {
-        localStorage.setItem("input", taskInput);
-    };
+        .val()
+        .trim();
+
+// var saveInput = function() {
+    localStorage.setItem("input", taskInput);
+    // };
+    // saveInput();
 });
+// todos on the page
+function displayInput(input) {
+    var input = localStorage.getItem("input") || [];
+     $('.text').empty();
+     console.log("noway")
+    
+    //iterates over the input list
+    for (var i = 0; i < input.length; i++) {
+        console.log("yipee")
+        var toDoText = $('<p>')
+            .addClass("task")
+            .text(".text");
+            console.log("soclose")
+        toDoText.text(input[i]);
+    
+        //replace textarea with p element
+        $("<textarea>").replaceWith(toDoText);
+        console.log("madeit")
+    }
 
-// var list = JSON.parse(localStorage.getItem("input")) || [];
-
+    };
 //set current time to compare to scheduled time
 var compareTime = moment().hours();  // give us the current hour in military format 
 console.log(compareTime);
@@ -43,11 +67,15 @@ var nowTime = function() {
         $(this).addClass("future");
         console.log("ok")
         }
+        // saveInput();
     });
 }
-
 // when page loads
+displayInput();
 nowTime();
+});
+
+
 
 
 
