@@ -10,16 +10,61 @@ console.log(displayDay);
 currentDayEl.textContent = displayDay;
 
 //save entered comment
-$(".save-input").on("click", function(event) {
+$(".hour1").on("click", function(event) {
     event.preventDefault();
-    var taskInput = $(".text")
+    var hour1= $("#hour1")
+        .val();
+        // .trim();
+        
+    localStorage.setItem("input", hour1);
+});
+$(".hour2").on("click", function(event) {
+    var hour2 = $("#hour2")
         .val()
         .trim();
-
-// var saveInput = function() {
-    localStorage.setItem("input", taskInput);
-    // };
-    // saveInput();
+    localStorage.setItem("input", hour2);
+});
+$(".hour3").on("click", function(event) {
+    var hour3 = $("#hour3")
+        .val()
+        .trim();
+    localStorage.setItem("input", hour3);
+});
+$(".hour4").on("click", function(event) {
+    var hour4 = $("#hour4")
+        .val()
+        .trim();
+    localStorage.setItem("input", hour4);
+});
+$(".hour5").on("click", function(event) {
+    var hour5 = $("#hour5")
+        .val()
+        .trim();
+    localStorage.setItem("input", hour5);
+});
+$(".hour6").on("click", function(event) {
+    var hour6 = $("#hour6")
+        .val()
+        .trim();
+    localStorage.setItem("input", hour6);
+});
+$(".hour7").on("click", function(event) {
+    var hour7 = $("#hour7")
+        .val()
+        .trim();
+    localStorage.setItem("input", hour7);
+});
+$(".hour8").on("click", function(event) {
+    var hour8 = $("#hour8")
+        .val()
+        .trim();
+    localStorage.setItem("input", hour8);
+});
+$(".hour9").on("click", function(event) {
+    var hour9 = $("#hour9")
+        .val()
+        .trim();
+    localStorage.setItem("input", hour9);
 });
 // todos on the page
 function displayInput(input) {
